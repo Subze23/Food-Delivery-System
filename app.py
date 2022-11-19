@@ -132,7 +132,7 @@ def forgot_password_page():
 
 @app.route('/home')
 def home_page():
-    if ( 'user' not in session ): return redirect('/login')
+    #if ( 'user' not in session ): return redirect('/login')
     return render_template('home.html')
 
 
