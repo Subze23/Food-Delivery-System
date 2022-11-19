@@ -1,0 +1,45 @@
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Delivery Partner</title>
+        <link rel="stylesheet" href="../static/style.css">
+      </head>
+      <body>
+        <div class="center">
+          <h1>Location</h1>
+          <form method="post">
+            
+            
+            <div class="link">
+              Not a member? <a href="/signup">Signup</a>
+            </div>
+          </form>
+        
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+    
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+	x.innerHTML="Latitude: " + position.accuracy;
+}
+</script>
+        </div>
+        
+      </body>
+    </html>
