@@ -40,6 +40,14 @@ class User(db.Model):
         self.address = address
         self.phno = phno
 
+class Food(db.Model):
+    uid = db.Column("id", db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    price = db.Column(db.Integer)
+
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
 
 @app.route('/')
 def hello_world():
@@ -133,7 +141,9 @@ def forgot_password_page():
 @app.route('/home')
 def home_page():
     #if ( 'user' not in session ): return redirect('/login')
-    return render_template('home.html')
+    foods = Food.query.filter_by()
+    print(foods)
+    return render_template('home.html', foods = foods)
 
 
 @app.route('/logout')
