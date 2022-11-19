@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Forgot password</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" id="name" required>
+          <span></span>
+          <label>Username or Email</label>
+        </div>
+        <div id="otp" name="otp" class="txt_field">
+            <input type="text" id="otp-inp">
+            <span></span>
+            <label>OTP</label>
+          </div>
+        <input type="button" id="submit" onclick="otpSend()" value="Send verification email">
+        <div class="link">
+          Remembered your password..? <a href="/login">Login</a>
+        </div>
+      </form>
+    </div>
+    <script>
+        function otpSend() {
+          let otpField = document.getElementById("otp");
+          let data = null;
+          let flag = false;
+          if ( !flag ) {
+            data = {name: document.getElementById('name').value, otp: otpField.value };
+          } else {
+            data = {name: document.getElementById('name').value};
+          }
+          $.post("/forgot-password", data,
+            function(data,status){
+              if ( !flag && status == "nocontent" ) {
+                otpField.style.display = 'block';
+                document.getElementById("otp-inp").setAttribute("name", "otp");
+                let subBtn = document.getElementById('submit');
+                subBtn.setAttribute('type',"submit");
+                subBtn.value = "Verify OTP";
+                subBtn.setAttribute("onclick", "");
+              }
+          });
+        }
+    </script>
+  </body>
+</html>
