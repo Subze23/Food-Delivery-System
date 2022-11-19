@@ -111,8 +111,8 @@ CREATE TABLE `order` (
   `delivery_pid` int DEFAULT NULL,
   `status` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `userid_idx` (`userid`),
   KEY `delivery_pid_idx` (`delivery_pid`),
+  KEY `userid_idx` (`userid`),
   CONSTRAINT `delivery_pid` FOREIGN KEY (`delivery_pid`) REFERENCES `delivery_person` (`id`),
   CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -155,6 +155,36 @@ LOCK TABLES `orderedfood` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `userid` int NOT NULL,
+  `id` int NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `foodid` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `uid_idx` (`userid`),
+  KEY `fid_idx` (`foodid`),
+  CONSTRAINT `fid` FOREIGN KEY (`foodid`) REFERENCES `fooditem` (`id`),
+  CONSTRAINT `uid` FOREIGN KEY (`userid`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `store`
 --
 
@@ -189,7 +219,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `phno` int DEFAULT NULL,
   `address` varchar(45) NOT NULL,
@@ -221,4 +251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-19 10:48:34
+-- Dump completed on 2022-11-19 13:34:54

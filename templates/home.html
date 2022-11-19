@@ -6,9 +6,369 @@
     <link rel="stylesheet" href="../static/style.css">
   </head>
   <body>
-    <div class="home-box">
-      <h1>Welcome to Tech-A-Thon</h1>
-      <button onclick="window.open('/logout', '_self')">Logout</button>
+    <div class="full-screen-preview"> 
+        <script src="js/jquery.js"></script> 
+        <script src="css/bootstrap/js/popper.min.js"></script>   
+        <script src="css/bootstrap/js/bootstrap.min.js"></script> 
+        <script src="js/jquery.easing.min.js"></script> 
+        <script src="js/jquery.fitvids.js"></script> 
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/owl-carousel/owl.carousel.min.js"></script> 
+        <script src="js/init.js"></script> 
+        <script type="text/javascript">
+function incrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<10){
+        value++;
+            document.getElementById('number').value = value;
+    }
+}
+function decrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;
+            document.getElementById('number').value = value;
+    }
+
+}
+</script> 
+        
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+       .inc{
+        color: red !important;
+        width:10px;
+       } 
+      }
+    </style>
+
+    <title>DOOP RESTAURANT</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">DOPE RESTAURANT</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index2.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+              >Signup</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="row ">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://www.shutterstock.com/image-photo/homemade-dosa-dhosa-masala-plain-260nw-1597787986.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5>Dosa </h5>
+             
+            <div class="container">
+                <input  type="button" class="inc" style="width:30px;" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" style="width: 30px;"class="inc" onclick="incrementValue()" value="+" />
+                </div>
+                <p style="padding-left:50px;">Price:80/- per nos.</p>    
+            <p class="card-text">
+            </p>
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://media.istockphoto.com/id/821399028/photo/tamilnadu-idli-sambar.jpg?s=612x612&w=0&k=20&c=pKFZEDydXZZpF1N7pMz9snwIK4HP9qghgNrNFMGCZv4="
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Idly</h5> 
+            <div class="container">
+
+                <input type="button" class="inc"style="width:30px;" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" style="width:30px;" onclick="incrementValue()" value="+" />
+                </div> 
+                <p style="padding-left:50px;">Price:60/- for 3 nos.</p>
+            <p class="card-text">
+                </p>
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://static.toiimg.com/photo/61051454.cms" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Pongal</h5> 
+            <p> The nice</p> 
+            <div class="container">
+
+                <input type="button" class="inc"style="width:30px;" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc"style="width:30px;" onclick="incrementValue()" value="+" />
+                </div>   
+                <p style="padding-left:50px;">Price:70/-  per nos.</p>
+            
+
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div>  
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://thumbs.dreamstime.com/b/fried-rice-crap-meat-43718100.jpg" 
+            width="500" height="194"  
+           class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Fried Rice</h5> 
+            <div class="container">
+
+                <input type="button" class="inc" onclick="decrementValue()" value="-" />
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                <input type="button" class="inc" onclick="incrementValue()" value="+" />
+                </div> 
+
+            
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div>
+      
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
   </body>
 </html>
